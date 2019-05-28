@@ -10,7 +10,7 @@ module Amco
         end
 
         def logout(controller, service = nil)
-          controller.params = controller.cas_params
+          controller&.params = controller&.cas_params
           super(controller, service)
         end
       end

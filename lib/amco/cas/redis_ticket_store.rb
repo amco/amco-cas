@@ -9,7 +9,7 @@ module Amco
       def read_service_session_lookup st
         raise CASException, "No service_ticket specified." if st.nil?
         st = st.ticket if st.kind_of? CASClient::ServiceTicket
-        session = Amco::Cas::Session.find st
+        session = Session.find st
         session.session_id
       end
 
@@ -19,14 +19,14 @@ module Amco
 
         sid = session_id_from_controller(controller)
         st = st.ticket if st.kind_of? CASClient::ServiceTicket
-        id_session = Amco::Cas::Session.new(ticket: st, session_id: sid, email: controller.session[:current_user_id])
+        id_session = Session.new(ticket: st, session_id: sid, email: controller.session[:current_user_id])
         id_session.save
       end
 
       def cleanup_service_session_lookup(st)
         raise CASException, "No service_ticket specified." if st.nil?
         st = st.ticket if st.kind_of? CASClient::ServiceTicket
-        session = Amco::Cas::Session.find st
+        session = Session.find st
         session.destroy
       end
 

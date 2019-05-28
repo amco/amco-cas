@@ -1,4 +1,4 @@
-require "amco/cas/sessions_config"
+require 'amco/cas/sessions_config'
 
 module Amco
   module Cas
@@ -25,11 +25,11 @@ module Amco
       end
 
       def save
-        database.set ticket, values.to_json
+        database.set(ticket, values.to_json)
       end
 
       def destroy
-        database.del ticket
+        database.del(ticket)
       end
 
       private

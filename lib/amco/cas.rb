@@ -1,8 +1,7 @@
-require "amco/cas/engine"
-require "amco/cas/redis_ticket_store"
-require "amco/cas/filter"
-require "amco/cas/session"
-#require "amco/cas/sessions_config"
+require 'amco/cas/engine'
+require 'amco/cas/redis_ticket_store'
+require 'amco/cas/filter'
+require 'amco/cas/session'
 
 module Amco
   module Cas
