@@ -20,7 +20,7 @@ are hooked into the ApplicationController to control access to the app
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your rails pplication's Gemfile:
 
 ```ruby
 gem 'rubycas-client-rails', git: 'https://github.com/amco/rubycas-client-rails', branch: '0.1'
