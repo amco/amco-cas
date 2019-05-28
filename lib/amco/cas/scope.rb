@@ -31,7 +31,7 @@ module Amco
 
         def log_out
           reset_session
-          return Amco::Cas::Filter.logout(self, request.base_url)
+          return Filter.logout(self, request.base_url)
         end
 
         def filter_amco_id

@@ -10,6 +10,14 @@ This gem exposes a route to the main app which can be used with:
 = link_to amco_cas.logout_path, method: :delete
 ```
 
+the following before actions
+
+```ruby
+before_action :filter_amco_id, :require_user
+```
+
+are hooked into the ApplicationController to control access to the app
+
 ## Installation
 
 Add this line to your application's Gemfile:
