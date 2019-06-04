@@ -169,7 +169,6 @@ PLATFORMS
 
 DEPENDENCIES
   amco-cas!
-  bundler (~> 1.17)
   rake (~> 10.0)
   rspec-rails
 
