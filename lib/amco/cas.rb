@@ -10,7 +10,7 @@ module Amco
         yield config
       end
 
-      def config(config)
+      def config(config = {})
         RubyCAS::Filter.setup(config)
       end
     end

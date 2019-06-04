@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 
+# You will need this if you try to run the specs, since the gemspec does not accept gems not published to ruby gems
+# gem 'rubycas-client-rails', git: 'https://github.com/amco/rubycas-client-rails', branch: '0.1'
+
 gemspec
 
 # Declare any dependencies that are still in development here instead of in
