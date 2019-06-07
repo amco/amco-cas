@@ -18,7 +18,7 @@ module Amco
       end
 
       def settings_class
-        @@settings_class.constantize
+        @@settings_class_name.constantize
       end
     end
   end
