@@ -47,6 +47,7 @@ config.before_initialize do
   config.rubycas.enable_single_sign_out = ::Settings.amco_id.enable_single_sign_out
   config.rubycas.ticket_store = Amco::Cas::RedisTicketStore
   config.rubycas.username_session_key = ::Settings.amco_id.username_session_key.to_sym
+  Amco::Cas.settings_class_name = 'YourAppSettings'
   Amco::Cas.config(config.rubycas)
 end
 ```
