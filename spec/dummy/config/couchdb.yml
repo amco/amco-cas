@@ -1,0 +1,15 @@
+defaults: &defaults
+  host: localhost
+  port: 5984
+  protocol: http
+  design: amco-cas
+  username:
+  password:
+  name: amco-cas
+
+test:
+  <<: *defaults
+  name: amco-cas-test
+
+development:
+  <<: *defaults

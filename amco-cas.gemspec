@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email       = ["amcoit@amcoonline.net"]
   spec.homepage    = "https://github.com/amco/amco-cas"
   spec.summary     = %q{Abstracts away basic authentication and filtering logic to be used with amco id.}
-  spec.description = %q{}
+  spec.description = %q{Provides basic authentication with the CAS amco id server and helper methods}
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -23,13 +23,15 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
+  spec.required_ruby_version = '>= 2.3.0'
+
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "rails", ">= 4.2.11.1"
   spec.add_dependency "redis-rails"
+  spec.add_dependency "dolly"
+  spec.add_dependency "settingslogic"
 
-  spec.add_development_dependency "sqlite3"
-  spec.add_development_dependency "bundler", "~> 1.17"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-rails"
 end

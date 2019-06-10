@@ -12,7 +12,7 @@ module Amco
       private
 
       def db_config
-        @config ||= Settings.amco_id.symbolize_keys[:session_db]
+        @config ||= Amco::Cas.settings_class.amco_id.symbolize_keys[:session_db]
       end
     end
   end

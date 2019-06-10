@@ -9,7 +9,7 @@ module Amco
       def read_service_session_lookup st
         raise CASException, "No service_ticket specified." if st.nil?
         st = st.ticket if st.kind_of? CASClient::ServiceTicket
-        session = Amco::Cas::Session.find st
+        session = Amco::Cas::Session.find(st)
         session.session_id
       end
 
@@ -26,12 +26,12 @@ module Amco
       def cleanup_service_session_lookup(st)
         raise CASException, "No service_ticket specified." if st.nil?
         st = st.ticket if st.kind_of? CASClient::ServiceTicket
-        session = Amco::Cas::Session.find st
+        session = Amco::Cas::Session.find(st)
         session.destroy
       end
 
       def process_single_sign_out st
-        session_id = read_service_session_lookup st
+        session_id = read_service_session_lookup(st)
 
         if session_id
           if session = Rails.cache.read(session_key(session_id))
