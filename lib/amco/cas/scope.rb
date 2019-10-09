@@ -8,7 +8,7 @@ module Amco
         before_action :filter_amco_id, :require_user
 
         def cas_params
-          params.permit(:logoutRequest, :ticket, :renew, :id)
+          params.permit(:logoutRequest, :ticket, :renew, :id, :format, :commit, :utf8)
         end
 
         private
